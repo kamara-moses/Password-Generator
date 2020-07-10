@@ -1,85 +1,76 @@
-// The Password generator will provide a password with 8-128  characters based on criteria the user specifies.
+// Arrays
+var passwordLength;
+var Uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var Lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var Numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var Symbols = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '='];
 
-//Assignment Code + Event Listener to prompt questions when button pushed
-document.querySelector('#generate').addEventListener('click', writePassword);
+// Defined Variables
+var passwordLength;
+var confirmUppercase;
+var confrimLowercase;
+var confirmNumbers;
+var confirmSymbols;
 
-// Various Arrays 
-var number = ['0','1','2','3','4','5','6','7','8','9'];
-var specialChar = ['!', '%', '&', ',', '*', '+', '-', '.', '/', '<', ''>'', '?','~'];
-var alphaLower = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-var alphaUpper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+// starts the password generator and ask for the users inputs
+var get = document.querySelector('#generate');
 
-// Variable Declaration 
-var confirmLength = '';
-var confirmSpecialCharacter;
-var confirmNumericCharacter;
-var confirmUpperCase;
-var confirmLowerCase;
+get.addEventListener('click', function () {
+    pwd = createPassword();
+    document.getElementById('generate').placeholder = pwd;
+});
 
-// Prompt to confirm how many characters the user would like in their password
-function generatePassword() {
-  var confirmLength = (prompt('How many characters would you like your password to contain?'));
+// worked with my tutor and someone from learning assitance to confirm users prompts
+function createPassword() {
 
-  // Loop if answer is outside the parameters 
-  while(confirmLength <= 7 || confirmLength >= 129) {
-      alert('Password length must be between 8-128 characters Try again');
-      var confirmLength = (prompt('How many characters would you like your password to contain?'));
-      } 
+    passwordLength = prompt('How many characters do you want your password to be? choose between 8-128 characters');
 
-      // Repeat back how many charactes the user will have  
-      alert(`Your password will have ${confirmLength} characters`);
-
-    // Determine parameters of password 
-    var confirmSpecialCharacter = confirm('Click OK to confirm if you would like to include special characters');
-    var confirmNumericCharacter = confirm('Click OK to confirm if you would like to include numeric characters');    
-    var confirmLowerCase = confirm('Click OK to confirm if you would like to include lowercase characters');
-    var confirmUpperCase = confirm('Click OK to confirm if you would like to include uppercase characters');
-
-      // Loop if answer is outside the parameters 
-      while(confirmUpperCase === false && confirmLowerCase === false && confirmSpecialCharacter === false && confirmNumericCharacter === false) {
-        alert('You must choose at least one parameter');
-        var confirmSpecialCharacter = confirm('Click OK to confirm if you would like to include special characters');
-        var confirmNumericCharacter = confirm('Click OK to confirm if you would like to include numeric characters');    
-        var confirmLowerCase = confirm('Click OK to confirm if you would like to include lowercase characters');
-        var confirmUpperCase = confirm('Click OK to confirm if you would like to include uppercase characters');   
-    } 
-
-      // Assign an action to the password parameters
-      var passwordCharacters = []
-      
-    if (confirmSpecialCharacter) {
-      passwordCharacters = passwordCharacters.concat(specialChar)
+    if (passwordLength < 8 || passwordLength > 128) {
+        alert('password must be between 8-128 characters');
+        passwordLength = prompt('How many characters do you want your password to be? choose between 8-128 characters');
     }
+    // alert that let the user knows that the length they chose meet the criteria
+    alert('the password length you have chosen meet the password generator criteria');
 
-    if (confirmNumericCharacter) {
-      passwordCharacters = passwordCharacters.concat(number)
-    }
-      
-    if (confirmLowerCase) {
-      passwordCharacters = passwordCharacters.concat(alphaLower)
-    }
+    var confirmUppercase = confirm('do you want uppercase included in your password?');
+    var confrimLowercase = confirm('do you want lowercase included in your password?');
+    var confirmNumbers = confirm('do you want numbers included in your password?');
+    var confirmSymbols = confirm('do you want symbols included in your password?');
+}
+var passwordChars = []
 
-    if (confirmUpperCase) {
-      passwordCharacters = passwordCharacters.concat(alphaUpper)
-    }
-
-      console.log(passwordCharacters)
-
-      // Empty string to be filled based on for loop selecting random characters from the array
-      var randomPassword = ''
-      
-      for (var i = 0; i < confirmLength; i++) {
-        randomPassword = randomPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
-        console.log(randomPassword)
-      }
-      return randomPassword;
+if (confirmUppercase) {
+    passwordChars = passwordChars.concat(Uppercase)
+}
+if (confrimLowercase) {
+    passwordChars = passwordChars.concat(Lowercase)
+}
+if (confirmNumbers) {
+    passwordChars = passwordChars.concat(Numbers)
+}
+if (confirmSymbols) {
+    passwordChars = passwordChars.concat(Symbols)
 }
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector('#password');
+console.log(passwordChars)
 
-  passwordText.value = password;
+var text = '';
+
+for (var i = 0; i < length; i++) {
+    text += passwordChars.charAt(Math.floor(Math.random() * passwordChars.length));
+}
+    return text;
 }
 
+// create conditionals that checks if the password is 8-128 characters
+// create a function that randomly selects characters from the users inputs
+// create a variable that stores the password (string or array)
+// write password out to the webpage, hint manipulating the DOM
+
+// get the password length from the user
+// confirm if the user wants uppercase, lowercase, numbers, special characters
+// convert the password length to number and check IF the length is greater than 8 and less than 128
+// if the length is fine, create an `acceptableCharacters` array and set to []
+// add the confirmed array all the approved characters (lowercase/uppercase/numbers/special)
+// loop to the approved password length and choose a random array index and place in string that will be the password
+// print password in the result box
