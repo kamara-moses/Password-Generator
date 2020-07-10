@@ -36,7 +36,7 @@ function createPassword() {
     var confrimLowercase = confirm('do you want lowercase included in your password?');
     var confirmNumbers = confirm('do you want numbers included in your password?');
     var confirmSymbols = confirm('do you want symbols included in your password?');
-}
+
 var passwordChars = []
 
 if (confirmUppercase) {
@@ -61,6 +61,7 @@ for (var i = 0; i < length; i++) {
 }
     return text;
 }
+
 
 // create conditionals that checks if the password is 8-128 characters
 // create a function that randomly selects characters from the users inputs
