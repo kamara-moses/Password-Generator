@@ -12,16 +12,14 @@ var confrimLowercase;
 var confirmNumbers;
 var confirmSymbols;
 
-// starts the password generator and ask for the users inputs
-var get = document.querySelector('#generate');
+// starts the password generator and ask for the users input
+var generateBtn = document.querySelector("#generate");
 
-get.addEventListener('click', function () {
-    pwd = createPassword();
-    document.getElementById('generate').placeholder = pwd;
-});
+generateBtn.addEventListener('click', writePassword);
+
 
 // worked with my tutor and someone from learning assitance to confirm users prompts
-function createPassword() {
+function generatePassword() {
 
     passwordLength = prompt('How many characters do you want your password to be? choose between 8-128 characters');
 
@@ -37,7 +35,7 @@ function createPassword() {
     var confirmNumbers = confirm('do you want numbers included in your password?');
     var confirmSymbols = confirm('do you want symbols included in your password?');
 
-var passwordChars = []
+var passwordChars = [];
 
 if (confirmUppercase) {
     passwordChars = passwordChars.concat(Uppercase)
@@ -52,14 +50,20 @@ if (confirmSymbols) {
     passwordChars = passwordChars.concat(Symbols)
 }
 
-console.log(passwordChars)
-
 var text = '';
 
-for (var i = 0; i < length; i++) {
-    text += passwordChars.charAt(Math.floor(Math.random() * passwordChars.length));
+for (var i = 0; i < passwordLength; i++) {
+    text += passwordChars[(Math.floor(Math.random() * passwordChars.length))];
 }
+  console.log(text, 'randomized password')
     return text;
+}
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
 }
 
 

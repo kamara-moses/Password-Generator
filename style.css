@@ -8,18 +8,18 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-image: linear-gradient(to left, rgb(255, 255, 255)20%, rgba(255, 182, 193)100%);
+  background-image: linear-gradient(to left, rgb(255, 255, 255)20%, rgba(116, 61, 61)100%);
 }
 
 header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: rgb(216, 133, 145);
+  color: rgb(116, 61, 61);
 }
 
 .card {
-  background-image: linear-gradient(to right, rgb(255, 255, 255)20%, rgba(255, 182, 193)100%);
+  background-image: linear-gradient(to right, rgb(255, 255, 255)20%, rgba(116, 61, 61)100%);
   border-radius: 5px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
@@ -68,11 +68,11 @@ button {
 
 .btn {
   border: none;
-  background-image: linear-gradient(to left, rgb(255, 255, 255)20%, rgba(255, 182, 193)100%);
+  background-image: linear-gradient(to left, rgb(255, 255, 255)20%, rgba(116, 61, 61)100%);
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
-  color: rgb(216, 133, 145);
+  color: rgb(116, 61, 61);
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
