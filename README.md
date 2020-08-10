@@ -1,16 +1,17 @@
-# Homework-Week3
-Password Generator
+# Password Generator
+
+<h2>Purpose</h2>
+A password is randomly generated once the user provide answers to the prompted questions.
+
+Upon launching, the user can click the generate password button. Once the generate password is clicked the user will be asked propmted to answer several questions. If the password is outsite the password length criteria of 8-128 characters. The user will be asked to choose a password length that meet the criteria. Once all criteria have been met, the application will generate a password that will be displayed in the box.
 
 ![Password Generator Demo](images/password-generator.gif)
 
-Kept the index.html file the same
-Changed some of the styling to the style.css file to my liking
-defined the arrays to use for the password generator
-defined the variables with which we will use to generate the password
-used prompts to alert the user how many characters they want in their password. Choices are between 8-128 characters
-used prompts and confirmLength to confirm the users input on how long they want their password
-define the parameters for the password by asking a series of question
-using loop to loop if the answer is outside the parameter of the function
-Assigned an action to the password parameters
-used var randomPassword = '' to be filled based on looping random characters
-used function writePassword() to generate and write the password to the card
+<h2>Tedchnologies used</h2>
+    - HTML5
+    - CSS3
+    -JavaScript
+
+<h2>Difficulties</h2>
+I had some difficulties with getting the prompts to the user and ensuring that the application generate a password that fits the users inputs. That presented a challenge that taught me an d alot.
+
