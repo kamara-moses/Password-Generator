@@ -13,13 +13,13 @@ var confirmNumbers;
 var confirmSymbols;
 
 // starts the password generator and ask for the users input
-var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector('#generate');
 
 generateBtn.addEventListener('click', writePassword);
 
 
 // worked with my tutor and someone from learning assitance to confirm users prompts
-function generatePassword() {
+generatePassword = () => {
 
     passwordLength = prompt('How many characters do you want your password to be? choose between 8-128 characters');
 
@@ -35,34 +35,34 @@ function generatePassword() {
     var confirmNumbers = confirm('do you want numbers included in your password?');
     var confirmSymbols = confirm('do you want symbols included in your password?');
 
-var passwordChars = [];
+    var passwordChars = [];
 
-if (confirmUppercase) {
-    passwordChars = passwordChars.concat(Uppercase)
-}
-if (confrimLowercase) {
-    passwordChars = passwordChars.concat(Lowercase)
-}
-if (confirmNumbers) {
-    passwordChars = passwordChars.concat(Numbers)
-}
-if (confirmSymbols) {
-    passwordChars = passwordChars.concat(Symbols)
-}
+    if (confirmUppercase) {
+        passwordChars = passwordChars.concat(Uppercase)
+    }
+    if (confrimLowercase) {
+        passwordChars = passwordChars.concat(Lowercase)
+    }
+    if (confirmNumbers) {
+        passwordChars = passwordChars.concat(Numbers)
+    }
+    if (confirmSymbols) {
+        passwordChars = passwordChars.concat(Symbols)
+    }
 
-var text = '';
+    var text = '';
 
-for (var i = 0; i < passwordLength; i++) {
-    text += passwordChars[(Math.floor(Math.random() * passwordChars.length))];
-}
-  console.log(text, 'randomized password')
+    for (var i = 0; i < passwordLength; i++) {
+        text += passwordChars[(Math.floor(Math.random() * passwordChars.length))];
+    }
+    console.log(text, 'randomized password')
     return text;
 }
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+    var password = generatePassword();
+    var passwordText = document.querySelector('#password');
 
-  passwordText.value = password;
+    passwordText.value = password;
 
 }
 
