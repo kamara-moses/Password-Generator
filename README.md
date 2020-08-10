@@ -13,5 +13,5 @@ Upon launching, the user can click the generate password button. Once the genera
     -JavaScript
 
 <h2>Difficulties</h2>
-I had some difficulties with getting the prompts to the user and ensuring that the application generate a password that fits the users inputs. That presented a challenge that taught me an d alot.
+I had some difficulties with getting the prompts to the user and ensuring that the application generate a password that fits the users inputs. That presented a challenge that taught me alot.
 
