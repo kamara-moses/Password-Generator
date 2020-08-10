@@ -1,6 +1,6 @@
 # Homework-Week3
-Password Generator App
-images/weather-dashboard.gif
+Password Generator
+
 ![Password Generator Demo](images/password-generator.gif)
 
 Kept the index.html file the same
